@@ -16,5 +16,4 @@ export class LocationService {
   getMyLocation() {
 		return this.http.get(this.urlIpStack, {observe: 'response'});
 	}
-
 }
