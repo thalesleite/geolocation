@@ -1,2 +1,15 @@
 <app-my-location></app-my-location>
 <app-host-location></app-host-location>
+
+<section class="form-group">
+	<input type="text" class="form-control" name="" value="" placeholder="www.website.com or website.com" #hostname>
+</section>
+
+<section>
+	<button type="button" class="btn btn-outline-dark">My location</button>
+	<button type="button" class="btn btn-outline-dark">Reset location</button>
+	<button 
+		type="button" 
+		class="btn btn-outline-dark" 
+		(click)="getHostLocation(hostname.value)">Locate</button>
+</section>

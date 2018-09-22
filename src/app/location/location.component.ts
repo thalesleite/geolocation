@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Location } from '../location';
+import { LocationService } from '../location.service';
+
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
@@ -12,4 +15,7 @@ export class LocationComponent implements OnInit {
   ngOnInit() {
   }
 
+   getHostLocation(hostname: string): void {
+		console.log(hostname);
+	}
 }

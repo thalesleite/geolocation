@@ -23,10 +23,10 @@ export class MyLocationComponent implements OnInit {
 			latitude: 1212, 
 			longitude: 1565161	
 		}];
-
-		this.locationService.getMyLocation()
-			.subscribe(resp => {
-				console.log(resp.body);
-			});
+		// this.locationService.getMyLocation()
+		// 		.subscribe(resp => {
+		// 			console.log(resp.body);
+		// 		});
   }
+
 }

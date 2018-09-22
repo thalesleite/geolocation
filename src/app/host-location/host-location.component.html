@@ -1,1 +1,11 @@
 <h4>Host location</h4>
+
+<ul *ngFor="let location of hostLocation">
+	<li>IP: <span>{{location.ip}}</span></li>
+	<li>Country: <span>{{location.country}}</span></li>
+	<li>Region: <span>{{location.region}}</span></li>
+	<li>City: <span>{{location.city}}</span></li>
+	<li>Zip Code: <span>{{location.zipCode}}</span></li>
+	<li>Latitude: <span>{{location.latitude}}</span></li>
+	<li>Longitude: <span>{{location.longitude}}</span></li>
+</ul>
