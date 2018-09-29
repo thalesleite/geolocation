@@ -1,0 +1,17 @@
+.location-container {
+	display: flex;
+}
+
+.location-input {
+	text-align: center;
+	margin: auto;
+	width: 40%;
+}
+
+.location-child {
+	width: 30%;
+}
+
+button {
+	width: 30%;
+}

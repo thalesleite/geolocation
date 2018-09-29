@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Location } from '../location';
 import { LocationService } from '../location.service';
+import { HostLocationComponent } from '../host-location/host-location.component';
 
 @Component({
   selector: 'app-location',
@@ -9,13 +10,14 @@ import { LocationService } from '../location.service';
   styleUrls: ['./location.component.css']
 })
 export class LocationComponent implements OnInit {
+	hostname: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-   getHostLocation(hostname: string): void {
-		console.log(hostname);
+  getHostLocation(newHostname: string): void {
+		this.hostname = newHostname;
 	}
 }

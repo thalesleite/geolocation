@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, SimpleChanges, OnInit } from '@angular/core';
 
 import { Location } from '../location';
 import { LocationService } from '../location.service';
@@ -9,6 +9,7 @@ import { LocationService } from '../location.service';
   styleUrls: ['./host-location.component.css']
 })
 export class HostLocationComponent implements OnInit {
+	@Input('newHostName') hostname: string;
 	hostLocation: Location[];
 
   constructor(private locationService: LocationService) { }
@@ -16,9 +17,12 @@ export class HostLocationComponent implements OnInit {
   ngOnInit() {
   }
 
-  getHostLocation(hostname: string): void {
-		this.locationService.getHostLocation(hostname)
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes.hostname.currentValue);
+
+    this.locationService.getHostLocation(this.hostname)
 			.subscribe(resp => {
+					console.log(resp);
 					this.hostLocation = [{ 
 						ip: resp.body.ip, 
 						country: resp.body.country_name, 
@@ -28,7 +32,7 @@ export class HostLocationComponent implements OnInit {
 						latitude: resp.body.latitude, 
 						longitude: resp.body.longitude	
 					}];
-			});
-	}
+		});
+  }
 
 }
